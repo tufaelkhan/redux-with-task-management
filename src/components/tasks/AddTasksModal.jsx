@@ -2,10 +2,16 @@ import { useForm } from "react-hook-form";
 import Modal from "../ui/Modal";
 
 function AddTasksModal({isOpen, setIsOpen}) {
-const { register, handleSubmit } = useForm()
+const { register, handleSubmit, reset } = useForm()
+
+    const onCancel = () =>{
+        reset();
+        setIsOpen(false)
+    }
 
     const onSubmit = (data) =>{
         console.log(data);
+        onCancel()
     }
 
     return (
@@ -15,24 +21,16 @@ const { register, handleSubmit } = useForm()
                 <label htmlFor="title">Title</label>
                 <input className="w-full rounded-lg" type="text" id="title" {...register('name')} />
                
-                <label htmlFor="title">Title</label>
-                <input className="w-full rounded-lg" type="text" id="title" {...register('name')} />
+                <label htmlFor="title">description</label>
+                <input className="w-full rounded-lg" type="text" id="description" {...register('description')} />
                 
                 <label htmlFor="title">Title</label>
-                <input className="w-full rounded-lg" type="text" id="title" {...register('name')} />
+                <input className="w-full rounded-lg" type="date" id="date" {...register('date')} />
                 
-                <label htmlFor="title">Title</label>
-                <input className="w-full rounded-lg" type="text" id="title" {...register('name')} />
-                
-                <label htmlFor="title">Title</label>
-                <input className="w-full rounded-lg" type="text" id="title" {...register('name')} />
-                
-                <label htmlFor="title">Title</label>
-                <input className="w-full rounded-lg" type="text" id="title" {...register('name')} />
-               
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title">Assign any one</label>
                 <select className="w-full rounded-lg" id="assignedTo" {...register('assignedTo')}>
-                <option value="Tufael khan">Tufael Khan</option>
+                <option value="choice one">Choice one</option>
+                <option value="Tufael">Tufael</option>
                 <option value="sujoy">sujoy</option>
                 <option value="sonjoy">sonjoy</option>
                 <option value="rakib">rakib</option>
@@ -50,8 +48,8 @@ const { register, handleSubmit } = useForm()
                         </select>
                     </div>
                 <div className="grid grid-cols-3 mt-5">
-                    <button type="button" className="btn btn-danger">cancel</button>
-                    <button type="submit" className="btn btn-primary">submit</button>
+                    <button onClick={()=>onCancel()} type="button" className="btn btn-danger mr-5">cancel</button>
+                    <button  type="submit" className="btn btn-primary">submit</button>
                 </div>
                 </form>
                 </Modal>
