@@ -1,9 +1,9 @@
+import Modal from "../ui/Modal";
 
-function AddTasksModal() {
+function AddTasksModal({isOpen, setIsOpen}) {
     return (
-        <div>
-            
-        </div>
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} title='tufael khan'><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis, commodi.
+                </p></Modal>
     );
 }
 

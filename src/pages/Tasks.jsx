@@ -3,6 +3,7 @@ import MyTasks from '../components/tasks/MyTasks';
 import TaskCard from '../components/tasks/TaskCard';
 import Modal from '../components/ui/Modal';
 import { useState } from 'react';
+import AddTasksModal from '../components/tasks/AddTasksModal';
 
 const Tasks = () => {
 const [isOpen, setIsOpen ] = useState(false)
@@ -22,8 +23,8 @@ const [isOpen, setIsOpen ] = useState(false)
               <BellIcon className="h-6 w-6" />
             </button>
             <button onClick={()=>setIsOpen(!isOpen)} className="btn btn-primary">
-              <Modal isOpen={isOpen} setIsOpen={setIsOpen}/>
               Add Task</button>
+              <AddTasksModal isOpen={isOpen} setIsOpen={setIsOpen}/>
             {/* <button className="btn btn-primary"></button> */}
             <div className="h-10 w-10 rounded-xl overflow-hidden">
               <img
