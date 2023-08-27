@@ -10,4 +10,4 @@ const tasksSlice = createSlice({
     reducers: {},
 })
 
-export default tasksSlice;
+export default tasksSlice.reducer;
