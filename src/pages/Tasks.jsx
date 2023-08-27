@@ -2,8 +2,11 @@ import { BellIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import MyTasks from '../components/tasks/MyTasks';
 import TaskCard from '../components/tasks/TaskCard';
 import Modal from '../components/ui/Modal';
+import { useState } from 'react';
 
 const Tasks = () => {
+const [isOpen, setIsOpen ] = useState(false)
+
   return (
     <div className="h-screen grid grid-cols-12">
       <div className="col-span-9 px-10 pt-10">
@@ -18,7 +21,9 @@ const Tasks = () => {
             <button className="border-2 border-secondary/20 hover:border-primary hover:bg-primary rounded-xl h-10 w-10 grid place-content-center text-secondary hover:text-white transition-all">
               <BellIcon className="h-6 w-6" />
             </button>
-            <button className="btn btn-primary"><Modal/> </button>
+            <button className="btn btn-primary">
+              <Modal isOpen={isOpen} setIsOpen={setIsOpen}/>
+               </button>
             <button className="btn btn-primary">Add Task</button>
             <div className="h-10 w-10 rounded-xl overflow-hidden">
               <img
