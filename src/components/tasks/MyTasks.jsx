@@ -2,8 +2,11 @@ import {
   CheckIcon,
   DocumentMagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
+import { useSelector } from 'react-redux';
 
 const MyTasks = () => {
+  const { tasks} = useSelector((state) => state.tasksSlice)
+  const { name } useSelector((state) => state.userSlice)
   const item = {
     id: 1,
     status: 'pending',
