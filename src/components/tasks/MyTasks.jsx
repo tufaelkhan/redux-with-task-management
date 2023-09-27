@@ -13,7 +13,7 @@ const MyTasks = () => {
 
   useEffect(()=>{
     dispatch(userTasks(userName))
-  }, [userName, dispatch])
+  }, [userName, dispatch, tasks])
 
   // const item = {
   //   id: 1,
